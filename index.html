@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>DABLIOA MKT - A Chave para o Sucesso</title>
+    
+    <link rel="icon" href="https://i.ibb.co/fd4smrSr/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-673d4522.jpg" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- CSS EMBUTIDO (INFALÍVEL E FINAL) --- */
+        
+        /* Variáveis */
+        :root {
+            --primary-color: #ffc107; /* Amarelo Vibrante/Dourado */
+            --secondary-color: #2c2c2c; /* Cinza Escuro (usado em detalhes e rodapé) */
+            --dark-color: #000000; /* Preto Puro (FUNDO PRINCIPAL) */
+            --light-color: #f8f8f8; /* Branco */
+            --blue-light: #87CEEB; /* Azul Claro */
+            --button-dark: #1a1a1a; /* Preto quase puro para botões */
+            --urgent-color: #FF0000; /* Vermelho padrão para urgência */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333; 
+            line-height: 1.7; 
+            background-color: var(--light-color); 
+            text-align: left;
+            font-size: 1.1em; 
+            scroll-behavior: smooth; 
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        /* Títulos de Seção */
+        h2.section-title {
+            font-size: 2.8em; 
+            font-weight: 900;
+            color: var(--dark-color);
+            text-align: center;
+            margin-bottom: 40px;
+            padding-top: 20px;
+            text-transform: uppercase;
+        }
+
+        h2.section-title::after {
+            content: '';
+            display: block;
+            width: 90px; 
+            height: 5px;
+            background: var(--primary-color);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 50px;
+            font-size: 1.2em;
+        }
+
+        /* --- NAV BAR --- */
+        .navbar {
+            background: var(--dark-color); 
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            padding: 0 10px;
+        }
+        .navbar .logo { 
+            display: flex; 
+            align-items: center;
+            gap: 0; 
+            font-size: 0; 
+        }
+        .navbar .logo img {
+            height: 50px; 
+            vertical-align: middle;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li a {
+            color: var(--light-color); 
+            text-decoration: none;
+            padding: 10px 15px;
+            display: block;
+            font-weight: 600;
+        }
+        .nav-links li a:hover {
+            color: var(--dark-color);
+            background-color: var(--primary-color);
+        }
+        .btn-contato {
+            background: var(--primary-color);
+            color: var(--dark-color) !important;
+            font-weight: 900 !important;
+        }
+        .menu-toggle {
+            display: none; 
+            background: none;
+            border: none;
+            color: var(--light-color); 
+            font-size: 2em;
+            cursor: pointer;
+        }
+
+        /* --- HEADER / INTRODUÇÃO (CAPA) --- */
+        #introducao {
+            background: var(--dark-color); 
+            color: var(--light-color);
+            padding: 50px 20px;
+            text-align: center;
+        }
+        .hero-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .cover-image { 
+            max-width: 100%; 
+            height: auto;
+            display: block;
+            margin-bottom: 30px; 
+            border: 10px solid var(--primary-color); 
+        }
+        #introducao h2.section-title.main-title { 
+            color: var(--light-color); 
+            font-size: 4em;
+        }
+        .hero-content .subtitle { 
+            color: var(--primary-color); 
+            font-size: 1.5em;
+            margin: 20px auto 0;
+        }
+
+        /* --- SOBRE NÓS --- */
+        .assinatura {
+            border-left: 8px solid var(--primary-color);
+            padding-left: 20px;
+            margin-top: 30px;
+        }
+
+        /* --- SERVIÇOS/CURSOS --- */
+        .service-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        .service-card {
+            background: var(--dark-color); 
+            color: var(--light-color); 
+            border: 3px solid var(--primary-color);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .service-card h3 {
+            color: var(--primary-color); 
+            font-size: 1.6em;
+        }
+        #cursos {
+            background-color: var(--dark-color); 
+            color: var(--light-color); 
+        }
+        .course-modules li {
+            background: var(--secondary-color); 
+            color: var(--light-color);
+            border-left: 6px solid var(--primary-color);
+        }
+        .intro-text-cursos { 
+            color: var(--blue-light) !important;
+        }
+
+        /* --- PORTFÓLIO (COLUNA) --- */
+        .portfolio-grid {
+            display: flex;
+            flex-direction: column; 
+            gap: 30px; 
+            padding: 20px 0;
+            max-width: 800px; 
+            margin: 0 auto; 
+        }
+        .portfolio-category {
+            text-align: center;
+            background: var(--dark-color);
+            padding: 15px; 
+            border-radius: 8px;
+            border: 3px solid var(--primary-color);
+            margin: 0 auto; 
+            max-width: 100%;
+        }
+        .portfolio-category img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            border: 2px solid var(--light-color);
+            display: block;
+        }
+
+
+        /* --- PROMOÇÃO FINAL (MÓDULO DE COMPRA APERFEIÇOADO) --- */
+        #promo-final {
+            background: linear-gradient(180deg, var(--dark-color) 0%, var(--secondary-color) 100%); 
+            padding: 80px 20px; 
+            border-top: 15px solid var(--primary-color); 
+            text-align: center;
+        }
+        .promo-box {
+            background-color: var(--dark-color); 
+            padding: 50px;
+            border-radius: 15px;
+            border: 5px solid var(--primary-color); 
+            box-shadow: 0 0 30px rgba(255, 193, 7, 0.7); 
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .promo-title {
+            color: var(--light-color); 
+            font-size: 2.2em;
+            margin-bottom: 5px;
+        }
+        .promo-subtitle {
+            color: var(--light-color); 
+            font-size: 1.4em;
+            margin-bottom: 25px;
+        }
+        
+        /* ESTILO PARA O BOTÃO DO GRUPO (AMARELO COM PRETO) */
+        .btn-group-link {
+            background-color: var(--primary-color); 
+            color: var(--dark-color); 
+            padding: 18px 45px; 
+            border-radius: 50px;
+            font-size: 1.5em;
+            font-weight: 900;
+            text-decoration: none;
+            display: inline-block;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.6);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-group-link:hover {
+            background-color: #cc9900;
+            transform: translateY(-3px);
+        }
+
+        /* ESTILO PARA O BLOCO DE PREÇO E VENDA */
+        .price-group-block {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 30px 0;
+            margin-top: 40px; 
+            background-color: var(--button-dark); 
+            border-radius: 15px;
+            border: 2px solid var(--primary-color);
+        }
+        .price-tag-sale {
+            background-color: var(--primary-color); 
+            display: inline-block;
+            padding: 15px 40px; 
+            border-radius: 10px;
+            margin-bottom: 20px; 
+            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        }
+        .price-tag-sale strong {
+            color: var(--dark-color) !important;
+            font-size: 4em; 
+            line-height: 1;
+        }
+        .lote-text {
+            color: var(--dark-color);
+            font-weight: 700;
+            font-size: 1em;
+            margin-top: 5px;
+        }
+        
+        /* ESTILO PARA O BOTÃO COMPRE JÁ (AGORA VERMELHO COM BRANCO) */
+        .btn-buy-now {
+            background-color: var(--urgent-color); /* VERMELHO */
+            color: var(--light-color); /* BRANCO */
+            padding: 20px 50px; 
+            border-radius: 50px;
+            font-size: 1.6em;
+            font-weight: 900;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 15px;
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4); /* Sombra vermelha */
+            border: 2px solid var(--urgent-color); /* Borda vermelha */
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .btn-buy-now:hover {
+            background-color: #cc0000; /* Vermelho mais escuro no hover */
+            transform: translateY(-4px);
+        }
+
+        .whatsapp-contact {
+            color: var(--blue-light);
+            margin-top: 20px;
+        }
+        
+        /* --- RODAPÉ --- */
+        footer {
+            background: var(--secondary-color); 
+            color: var(--light-color);
+            padding: 40px 0;
+            text-align: center;
+        }
+        footer .contact-info a {
+            color: var(--blue-light);
+        }
+
+        /* ==================================== */
+        /* 📱 MOBILE (Até 768px) - CORREÇÃO DE ESCALA E FONTE */
+        /* ==================================== */
+        @media (max-width: 768px) {
+            
+            /* FORÇA O LAYOUT DE COLUNA */
+            .service-cards-grid, .course-detail-grid {
+                grid-template-columns: 1fr;
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            /* AUMENTO AGRESSIVO E FIXO DA FONTE (SOLUÇÃO CONTRA SCALA) */
+            p, li, blockquote, .intro-text, .whatsapp-contact {
+                font-size: 16px !important; 
+                line-height: 1.5 !important;
+            }
+            .hero-content h2 {
+                font-size: 32px !important; 
+            }
+            .section-title, h2.section-title {
+                font-size: 24px !important; 
+            }
+            .service-card h3 {
+                font-size: 20px !important; 
+            }
+            .btn-group-link {
+                font-size: 1.4em !important;
+                padding: 15px 30px !important;
+            }
+            .price-tag-sale strong {
+                font-size: 3.5em !important; 
+            }
+            .btn-buy-now {
+                font-size: 1.2em !important;
+                padding: 15px 30px !important;
+            }
+            .navbar .logo img { 
+                height: 40px; 
+            }
+            
+            /* MENU MOBILE */
+            .menu-toggle {
+                display: block;
+            }
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: var(--dark-color); 
+                position: absolute;
+                top: 52px;
+                left: 0;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <img src="https://i.ibb.co/677SvBTq/Chat-GPT-Image-3-de-nov-de-2025-19-47-04.png" alt="Logo Dablioa MKT">
+            </div>
+            <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
+
+            <ul class="nav-links">
+                <li><a href="#sobre-nos">Sobre Nós</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#portfolio">Portfólio</a></li>
+                <li><a href="#promo-final" class="btn-contato">Contato</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="introducao">
+        <div class="hero-content">
+            <img src="https://i.ibb.co/5XzDHwhD/Imagem-do-Whats-App-de-2025-11-02-s-14-25-07-b7191c75.jpg" alt="Capa - A Chave para o Sucesso" class="cover-image">
+            
+            <h2 class="section-title main-title">A CHAVE PARA O SUCESSO</h2>
+            <p class="subtitle">Desbloqueie o potencial da sua equipe: gestão, treinamento e consultoria especializada.</p>
+        </div>
+    </header>
+
+    <section id="sobre-nos" class="container">
+        <h2 class="section-title">📜 Sobre Nós</h2>
+        <div class="content-text">
+            <p>Nossa história começa no ano 2000, quando éramos conhecidos como OlaMkt, uma pequena agência com um grande sonho: ajudar empresas a crescerem e prosperarem. Em 2001, renascemos como Dablioa Mkt, refletindo nossa nova fase de expansão e compromisso com resultados ainda maiores. Desde então, nosso foco é dedicado a transformar negócios de todos os tamanhos com estratégias criativas e personalizadas.</p>
+            <p>Acreditamos que o sucesso de nossos clientes é a nossa maior vitória. Por isso, além de marketing, oferecemos soluções integradas de treinamento e gestão, vendas e atendimento, garantindo que sua equipe esteja preparada para superar desafios e alcançar metas ambiciosas.</p>
+            <blockquote class="assinatura">
+                <p>Atenciosamente,<br><strong>Almeida Jr.</strong><br><em>CEO/Diretor/Mentor Dablioa MKT</em></p>
+            </blockquote>
+        </div>
+    </section>
+
+    <section id="servicos" class="container">
+        <h2 class="section-title">🎯 Nossos Serviços de Elite</h2>
+        <p class="intro-text">Explore nossas soluções feitas sob medida, desenhadas com foco em performance e transformação.</p>
+        
+        <div class="service-cards-grid">
+            
+            <div class="card service-card">
+                <h3>Consultoria de Marketing e Política</h3>
+                <p>Estratégia e posicionamento para alta competitividade.</p>
+            </div>
+            
+            <div class="card service-card">
+                <h3>Consultoria de Vendas</h3>
+                <p>Otimização de funil e técnicas de fechamento avançadas.</p>
+            </div>
+            
+            <div class="card service-card">
+                <h3>Consultoria de Atendimento</h3>
+                <p>Fidelização e excelência no relacionamento com o cliente.</p>
+            </div>
+            
+            <div class="card service-card">
+                <h3>Gestão e Capacitação de Pessoas</h3>
+                <p>Treinamento de equipes para resultados ambiciosos.</p>
+            </div>
+            
+            <div class="card service-card">
+                <h3>Social Media Advertising</h3>
+                <p>Campanhas pagas de alta conversão e presença digital.</p>
+            </div>
+            
+            <div class="card service-card">
+                <h3>Designer Gráfico e Criação de Conteúdo</h3>
+                <p>Identidade visual impactante e conteúdo de valor.</p>
+            </div>
+        </div>
+    </section>
+    
+    <section id="cursos" class="container">
+        <h2 class="section-title" style="color: var(--primary-color);">💰 CURSO EXCLUSIVO: BLACK FRIDAY MILIONÁRIA</h2>
+        <p class="intro-text intro-text-cursos">Transforme sua Black Friday na data mais lucrativa do ano com 7 Módulos Essenciais.</p>
+        
+        <div class="course-detail-grid">
+            
+            <div style="flex: 1;">
+                <h3 style="color: var(--primary-color); margin-bottom: 10px;">Módulos:</h3>
+                <ul class="course-modules">
+                    <li>Gatilho Secreto que Multiplica Resultados</li>
+                    <li>Engenharia de Produtos que Vende Estoque Parado</li>
+                    <li>Oferta Irresistível e Posicionamento de Loja</li>
+                    <li>Upcell e Crocell Inteligente</li>
+                    <li>Campanha de 8 Dias Black Friday Milionária</li>
+                    <li>Atendimento de Alta Performance</li>
+                    <li>Retenção, Follow Up e Rentabilização Pós-Venda</li>
+                </ul>
+            </div>
+            
+            <div style="flex: 1; padding-left: 20px;">
+                <h3 style="color: var(--primary-color); margin-bottom: 10px;">Outros Cursos Disponíveis:</h3>
+                <ul style="list-style: none; padding: 0;">
+                    <li>Curso de Vendas e Atendimento</li>
+                    <li>Curso de Liderança</li>
+                    <li>Curso de Pós e Retenção</li>
+                    <li>Curso de Follow Up e Retenção</li>
+                    <li>Curso de Rentabilização e Pós-Venda</li>
+                    <li>Curso de Turnover</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="container">
+        <h2 class="section-title">⭐ Nosso Legado: Imagens em Destaque</h2>
+        <p class="intro-text">Confira o visual de nossa empresa, parceiros, clientes e criações.</p>
+        
+        <div class="portfolio-grid">
+            
+            <div class="portfolio-category">
+                <img src="https://i.ibb.co/pjyb7KHn/Imagem-do-Whats-App-de-2025-11-02-s-14-25-09-d9e24b88.jpg" alt="Nossa História" class="logo-grid-image">
+            </div>
+            
+            <div class="portfolio-category">
+                <img src="https://i.ibb.co/VYtH7FvL/Imagem-do-Whats-App-de-2025-11-02-s-14-25-09-d0465dc6.jpg" alt="Logomarcas Criadas" class="logo-grid-image">
+            </div>
+            
+            <div class="portfolio-category">
+                <img src="https://i.ibb.co/Lh1Tf97B/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-a056e00c.jpg" alt="Logomarcas de Parceiros" class="logo-grid-image">
+            </div>
+            
+            <div class="portfolio-category">
+                <img src="https://i.ibb.co/fGHBJT4N/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-f863ceb3.jpg" alt="Ícones de Serviços" class="logo-grid-image">
+            </div>
+            
+            <div class="portfolio-category">
+                <img src="https://i.ibb.co/fd4smrSr/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-673d4522.jpg" alt="A Chave" class="logo-grid-image">
+            </div>
+            
+        </div>
+    </section>
+
+    <section id="promo-final">
+        <div class="promo-box container">
+            <h2 class="promo-title">GARANTA SEU ACESSO AGORA!</h2>
+            
+            <p class="promo-subtitle">Curso Black Friday Milionária no 1º Lote:</p>
+            
+            <a 
+                href="https://chat.whatsapp.com/Bp6hJ6OkhCuK8Kt0LAkYvm?mode=wwt" 
+                target="_blank" 
+                class="btn-group-link"
+            >
+                ENTRE NO GRUPO JÁ!
+            </a>
+
+            <div class="price-group-block">
+                
+                <div class="price-tag-sale">
+                    <strong style="font-size: 4.5em; color: var(--dark-color);">R$ 99<span class="cents">,90</span></strong>
+                    <p class="lote-text">Preço Exclusivo Primeiro Lote</p>
+                </div>
+                
+                <a 
+                    href="https://wa.me/556692499755?text=Ol%C3%A1%2C%20gostaria%20de%20comprar%20o%20Curso%20Black%20Friday%20Milion%C3%A1ria%20no%20primeiro%20lote%20de%20R%24%2099%2C90." 
+                    target="_blank" 
+                    class="btn-buy-now"
+                >
+                    COMPRE JÁ
+                </a>
+            </div>
+            
+            <p class="whatsapp-contact">Dúvidas? Fale com Almeida Junior no WhatsApp: 66 9249-9755</p>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container footer-content">
+            <div class="contact-info">
+                <h2 class="section-title">Fale Conosco</h2>
+                <p><strong>Telefone da Empresa:</strong> <span style="color: var(--blue-light);">(66) 9 9249 9755</span></p>
+                <p><strong>Instagram DABLIOA:</strong> <a href="https://www.instagram.com/dablioamktdigital" target="_blank" style="color: var(--blue-light); text-decoration: none;">@dablioamktdigital</a></p>
+                <p><strong>Meu Instagram:</strong> <a href="https://www.instagram.com/almeidajunior_wa" target="_blank" style="color: var(--blue-light); text-decoration: none;">@almeidajunior_wa</a></p>
+                <p style="color: var(--light-color);">Estamos prontos para ajudar o seu negócio a alcançar o próximo nível.</p>
+            </div>
+            <div class="copyright">
+                <p style="color: #aaa;">&copy; 2024 DABLIOA MKT. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            const links = document.querySelectorAll('.nav-links a');
+            links.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); 
+                    const targetId = this.getAttribute('href'); 
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        window.scrollTo({
+                            top: targetSection.offsetTop - navbarHeight - 10,
+                            behavior: 'smooth'
+                        });
+                    }
+
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
