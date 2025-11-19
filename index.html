@@ -133,18 +133,16 @@
         #introducao {
             background: var(--dark-color); 
             color: var(--light-color);
-            padding: 0; 
+            padding: 50px 20px;
             text-align: center;
             width: 100%; 
-            overflow: hidden; 
         }
         .cover-image { 
-            width: 100%; 
+            max-width: 100%; 
             height: auto;
             display: block;
             margin: 0 auto 30px auto; 
             border: 10px solid var(--primary-color); 
-            box-sizing: border-box; 
         }
         #introducao h2.section-title.main-title { 
             color: var(--light-color); 
@@ -159,10 +157,6 @@
         }
 
         /* --- SOBRE NÓS --- */
-        #sobre-nos { /* Fundo Branco */
-            background-color: var(--light-color);
-            padding: 60px 20px;
-        }
         .assinatura {
             border-left: 8px solid var(--primary-color);
             padding-left: 20px;
@@ -211,9 +205,6 @@
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 50px;
-        }
-        .course-detail-grid > div:last-child {
-            padding-left: 0; 
         }
 
 
@@ -289,28 +280,47 @@
             line-height: 1;
         }
         .price-tag-sale .lote-text {
-            color: var(--dark-color); /* CORREÇÃO: Texto do lote em preto */
+            color: var(--dark-color); 
             font-weight: 700;
             font-size: 0.9em;
             margin-top: 5px;
         }
+        /* NOVO: Wrapper para botões lado a lado */
+        .cta-buttons-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px; /* Espaço entre os botões */
+            margin-top: 20px;
+        }
+        .btn-buy-now-cta, .btn-group-link-secondary {
+            padding: 18px 30px; 
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: 900;
+            text-decoration: none;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4); /* Sombra padrão */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: auto; 
+            max-width: 50%; /* Limita a largura para caber lado a lado */
+        }
         .btn-buy-now-cta {
             background-color: var(--urgent-color); 
             color: var(--light-color);
-            padding: 18px 45px; 
-            border-radius: 50px;
-            font-size: 1.4em;
-            font-weight: 900;
-            text-decoration: none;
-            display: inline-block; 
-            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
-            transition: transform 0.3s ease;
-            width: auto; 
-            max-width: 100%; 
+            border: 2px solid var(--urgent-color);
         }
-        .btn-buy-now-cta:hover {
-            transform: translateY(-3px);
+        .btn-group-link-secondary {
+            background-color: #25D366; /* Verde WhatsApp */
+            color: var(--light-color);
+            border: 2px solid #25D366;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); /* Sombra verde */
         }
+        .btn-buy-now-cta:hover, .btn-group-link-secondary:hover {
+             transform: translateY(-3px);
+             box-shadow: 0 12px 25px rgba(0,0,0,0.5); /* Sombra mais intensa no hover */
+        }
+
 
         /* --- PROMOÇÃO FINAL (ÚLTIMO CTA) --- */
         #promo-final {
@@ -327,46 +337,19 @@
             border-radius: 15px;
             border: 5px solid var(--primary-color); 
         }
-        .btn-group-link {
-            background-color: #25D366; 
-            color: var(--light-color);
-            padding: 15px 40px; 
-            font-size: 1.4em;
-            text-decoration: none;
-            border-radius: 10px;
-            display: inline-block; 
-            margin-bottom: 30px; 
-            font-weight: 700;
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); 
-            transition: transform 0.3s ease;
+        /* Botões no CTA Final: usar os mesmos estilos e wrapper */
+        #promo-final .cta-buttons-wrapper {
+            margin-top: 30px;
+            margin-bottom: 20px; /* Adiciona espaço abaixo dos botões */
         }
-        .price-group-block {
-            padding: 30px 0;
-            margin-top: 40px; 
-            background-color: var(--button-dark); 
-            border-radius: 15px;
-            border: 2px solid var(--primary-color);
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-            gap: 20px; 
-            max-width: 400px; 
-            margin: 40px auto; 
-        }
-        .btn-buy-now {
-            background-color: var(--urgent-color); 
-            color: var(--light-color);
-            padding: 20px 50px; 
-            font-size: 1.6em;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 900;
-            display: inline-block;
-            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
-            transition: transform 0.3s ease;
+        #promo-final .btn-buy-now-cta, #promo-final .btn-group-link-secondary {
+            font-size: 1.4em; /* Ligeiramente maiores no CTA final */
+            padding: 20px 35px;
+            max-width: 48%; /* Ajusta para caber dois botões maiores */
         }
 
-        /* --- PORTFÓLIO (COLUNA) --- */
+
+        /* --- PORTFÓLIO (AGORA NO FINAL) --- */
         #portfolio {
             background-color: var(--dark-color);
             padding: 60px 20px;
@@ -410,14 +393,6 @@
             text-align: center;
             width: 100%;
         }
-        .webdesigner-signature {
-            background-color: var(--dark-color);
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 0.8em;
-            padding: 10px 0;
-            text-align: center;
-            width: 100%;
-        }
 
         /* ==================================== */
         /* 📱 MOBILE (Até 768px) - CORREÇÃO DE ESCALA E FONTE */
@@ -431,9 +406,32 @@
                 flex-direction: column;
                 gap: 20px;
             }
+            .portfolio-grid { 
+                gap: 15px;
+            }
             .course-detail-grid > div:last-child {
                 padding-left: 0;
                 margin-top: 20px; 
+            }
+            
+            /* FORÇA A EXIBIÇÃO DE BOTÕES UM ABAIXO DO OUTRO NO MOBILE */
+            .cta-buttons-wrapper {
+                flex-direction: column; 
+                gap: 10px;
+            }
+            .btn-buy-now-cta, .btn-group-link-secondary {
+                width: 80%; /* Garante que ocupe a maior parte da largura */
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            /* Aumenta um pouco os botões no mobile */
+            .btn-buy-now-cta, .btn-group-link-secondary {
+                font-size: 1.2em; /* Um pouco menor no mobile para caber melhor */
+                padding: 15px 25px;
+            }
+            #promo-final .btn-buy-now-cta, #promo-final .btn-group-link-secondary {
+                font-size: 1.3em;
+                padding: 18px 30px;
             }
 
             /* AUMENTO AGRESSIVO E FIXO DA FONTE (SOLUÇÃO CONTRA SCALA) */
@@ -449,10 +447,6 @@
             }
             .service-card h3 {
                 font-size: 20px !important; 
-            }
-            .btn-buy-now-cta, .btn-group-link { 
-                font-size: 1.2em !important;
-                padding: 15px 30px !important;
             }
             .price-tag-sale strong {
                 font-size: 3em !important; 
@@ -473,9 +467,6 @@
                 position: absolute;
                 top: 52px;
                 left: 0;
-            }
-            .nav-links.active {
-                display: flex;
             }
         }
     </style>
@@ -517,13 +508,22 @@
                 <p class="lote-text" style="color: var(--dark-color);">Preço Exclusivo Primeiro Lote</p>
             </div>
             
-            <a 
-                href="https://wa.me/556692499755?text=Ol%C3%A1%2C%20gostaria%20de%20comprar%20o%20Curso%20Black%20Friday%20Milion%C3%A1ria%20no%20primeiro%20lote%20de%20R%24%2099%2C90." 
-                target="_blank" 
-                class="btn-buy-now-cta"
-            >
-                COMPRE JÁ
-            </a>
+            <div class="cta-buttons-wrapper">
+                <a 
+                    href="https://wa.me/556692499755?text=Ol%C3%A1%2C%20gostaria%20de%20comprar%20o%20Curso%20Black%20Friday%20Milion%C3%A1ria%20no%20primeiro%20lote%20de%20R%24%2099%2C90." 
+                    target="_blank" 
+                    class="btn-buy-now-cta"
+                >
+                    COMPRE JÁ
+                </a>
+                <a 
+                    href="https://chat.whatsapp.com/Bp6hJ6OkhCuK8Kt0LAkYvm?mode=wwt" 
+                    target="_blank" 
+                    class="btn-group-link-secondary"
+                >
+                    ENTRE NO GRUPO JÁ!
+                </a>
+            </div>
         </div>
     </section>
     
@@ -581,13 +581,22 @@
                 <p class="lote-text" style="color: var(--dark-color);">Aproveite o Primeiro Lote!</p>
             </div>
             
-            <a 
-                href="https://wa.me/556692499755?text=Ol%C3%A1%2C%20gostaria%20de%20comprar%20o%20Curso%20Black%20Friday%20Milion%C3%A1ria%20no%20primeiro%20lote%20de%20R%24%2099%2C90." 
-                target="_blank" 
-                class="btn-buy-now-cta"
-            >
-                COMPRE JÁ
-            </a>
+            <div class="cta-buttons-wrapper">
+                <a 
+                    href="https://wa.me/556692499755?text=Ol%C3%A1%2C%20gostaria%20de%20comprar%20o%20Curso%20Black%20Friday%20Milion%C3%A1ria%20no%20primeiro%20lote%20de%20R%24%2099%2C90." 
+                    target="_blank" 
+                    class="btn-buy-now-cta"
+                >
+                    COMPRE JÁ
+                </a>
+                <a 
+                    href="https://chat.whatsapp.com/Bp6hJ6OkhCuK8Kt0LAkYvm?mode=wwt" 
+                    target="_blank" 
+                    class="btn-group-link-secondary"
+                >
+                    ENTRE NO GRUPO JÁ!
+                </a>
+            </div>
         </div>
     </section>
     
@@ -639,27 +648,24 @@
             
             <p class="promo-subtitle">Curso Black Friday Milionária no 1º Lote:</p>
             
-            <a 
-                href="https://chat.whatsapp.com/Bp6hJ6OkhCuK8Kt0LAkYvm?mode=wwt" 
-                target="_blank" 
-                class="btn-group-link"
-            >
-                ENTRE NO GRUPO JÁ!
-            </a>
-
-            <div class="price-group-block">
-                
-                <div class="price-tag-sale">
-                    <strong style="font-size: 4.5em; color: var(--dark-color);">R$ 99<span class="cents">,90</span></strong>
-                    <p class="lote-text" style="color: var(--dark-color);">Preço Exclusivo Primeiro Lote</p>
-                </div>
-                
+            <div class="price-tag-sale" style="width: auto; max-width: 350px;"> <strong style="font-size: 3em; color: var(--dark-color);">R$ 99<span class="cents">,90</span></strong>
+                <p class="lote-text" style="color: var(--dark-color);">Preço Exclusivo Primeiro Lote</p>
+            </div>
+            
+            <div class="cta-buttons-wrapper">
                 <a 
                     href="https://wa.me/556692499755?text=Ol%C3%A1%2C%20gostaria%20de%20comprar%20o%20Curso%20Black%20Friday%20Milion%C3%A1ria%20no%20primeiro%20lote%20de%20R%24%2099%2C90." 
                     target="_blank" 
-                    class="btn-buy-now"
+                    class="btn-buy-now-cta"
                 >
                     COMPRE JÁ
+                </a>
+                <a 
+                    href="https://chat.whatsapp.com/Bp6hJ6OkhCuK8Kt0LAkYvm?mode=wwt" 
+                    target="_blank" 
+                    class="btn-group-link-secondary"
+                >
+                    ENTRE NO GRUPO JÁ!
                 </a>
             </div>
             
@@ -686,68 +692,4 @@
                     <img src="https://i.ibb.co/Lh1Tf97B/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-a056e00c.jpg" alt="Logomarcas de Parceiros" class="logo-grid-image">
                 </div>
                 
-                <div class="portfolio-category">
-                    <img src="https://i.ibb.co/fGHBJT4N/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-f863ceb3.jpg" alt="Ícones de Serviços" class="logo-grid-image">
-                </div>
-                
-                <div class="portfolio-category">
-                    <img src="https://i.ibb.co/fd4smrSr/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-673d4522.jpg" alt="A Chave" class="logo-grid-image">
-                </div>
-                
-            </div>
-        </div>
-    </section>
-
-    
-    <footer>
-        <div class="container footer-content">
-            <div class="contact-info">
-                <h2 class="section-title">Fale Conosco</h2>
-                <p><strong>Telefone da Empresa:</strong> <span style="color: var(--blue-light);">(66) 9 9249 9755</span></p>
-                <p><strong>Instagram DABLIOA:</strong> <a href="https://www.instagram.com/dablioamktdigital" target="_blank" style="color: var(--blue-light); text-decoration: none;">@dablioamktdigital</a></p>
-                <p><strong>Meu Instagram:</strong> <a href="https://www.instagram.com/almeidajunior_wa" target="_blank" style="color: var(--blue-light); text-decoration: none;">@almeidajunior_wa</a></p>
-                <p style="color: var(--light-color);">Estamos prontos para ajudar o seu negócio a alcançar o próximo nível.</p>
-            </div>
-            <div class="copyright">
-                <p style="color: #aaa;">&copy; 2024 DABLIOA MKT. Todos os direitos reservados.</p>
-            </div>
-        </div>
-    </footer>
-
-    <div class="webdesigner-signature">
-        Web Designer: Arthur
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-
-            menuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-            });
-            
-            const links = document.querySelectorAll('.nav-links a');
-            links.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault(); 
-                    const targetId = this.getAttribute('href'); 
-                    const targetSection = document.querySelector(targetId);
-
-                    if (targetSection) {
-                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                        window.scrollTo({
-                            top: targetSection.offsetTop - navbarHeight - 10,
-                            behavior: 'smooth'
-                        });
-                    }
-
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                    }
-                });
-            });
-        });
-    </script>
-</body>
-</html>
+                <div
