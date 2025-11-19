@@ -9,6 +9,8 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800;900&display=swap" rel="stylesheet">
     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
         /* --- CSS EMBUTIDO (INFALÍVEL E FINAL) --- */
         
@@ -19,8 +21,8 @@
             --dark-color: #000000; /* Preto Puro (FUNDO PRINCIPAL) */
             --light-color: #f8f8f8; /* Branco */
             --blue-light: #87CEEB; /* Azul Claro */
-            --button-dark: #1a1a1a; /* Preto quase puro para botões */
-            --urgent-color: #FF0000; /* Vermelho padrão para urgência */
+            --urgent-color: #FF0000; /* Vermelho */
+            --button-dark: #1a1a1a;
         }
 
         * {
@@ -37,7 +39,7 @@
             text-align: left;
             font-size: 1.1em; 
             scroll-behavior: smooth; 
-            overflow-x: hidden;
+            overflow-x: hidden; /* Garante que não haverá barra de rolagem horizontal */
         }
 
         .container {
@@ -67,6 +69,19 @@
             margin: 10px auto 0;
             border-radius: 2px;
         }
+        
+        /* Estilo para o contêiner dos ícones */
+        .section-icons {
+            text-align: center;
+            margin-bottom: 20px; /* Espaçamento entre os ícones e o título */
+            font-size: 2.5em; /* Tamanho dos ícones */
+            color: var(--primary-color);
+        }
+        .section-icons .icon-separator {
+            color: #ccc; /* Cor do separador, se houver */
+            margin: 0 10px;
+        }
+
 
         .intro-text {
             text-align: center;
@@ -131,30 +146,34 @@
         #introducao {
             background: var(--dark-color); 
             color: var(--light-color);
-            padding: 50px 20px;
+            padding: 0; 
             text-align: center;
+            width: 100%; 
+            overflow: hidden; 
         }
         .hero-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            max-width: 100%; 
+            margin: 0 auto; 
+            padding: 0 0; 
         }
         .cover-image { 
-            max-width: 100%; 
+            width: 100%; 
             height: auto;
             display: block;
-            margin-bottom: 30px; 
+            margin: 0 auto 30px auto; 
             border: 10px solid var(--primary-color); 
+            box-sizing: border-box; 
         }
         #introducao h2.section-title.main-title { 
             color: var(--light-color); 
             font-size: 4em;
+            padding: 20px; 
         }
         .hero-content .subtitle { 
             color: var(--primary-color); 
             font-size: 1.5em;
             margin: 20px auto 0;
+            padding: 0 20px; 
         }
 
         /* --- SOBRE NÓS --- */
@@ -164,7 +183,67 @@
             margin-top: 30px;
         }
 
-        /* --- SERVIÇOS/CURSOS --- */
+        /* --- CURSOS (AGORA É A SEÇÃO PRETA COM O CURSO) --- */
+        #cursos { 
+            background-color: var(--dark-color); 
+            color: var(--light-color); 
+            padding: 60px 20px; 
+            width: 100%; 
+        }
+        #cursos h2 { 
+            color: var(--primary-color);
+        }
+        #cursos h3 {
+            color: var(--primary-color); 
+            font-weight: 900;
+            font-size: 1.3em;
+            text-align: center; 
+            margin-bottom: 25px;
+        }
+        /* ESTILO DOS MÓDULOS DE CURSO OTIMIZADO */
+        .course-modules {
+            list-style: none; 
+            padding: 0;
+        }
+        .course-modules li {
+            background: var(--secondary-color); 
+            color: var(--light-color);
+            border-left: 6px solid var(--primary-color); 
+            padding: 15px; 
+            margin-bottom: 15px; 
+            border-radius: 6px;
+            font-weight: 600; 
+            font-size: 1em;
+            text-align: left;
+            transition: transform 0.2s ease;
+        }
+        .course-modules li:hover {
+            transform: translateX(5px);
+        }
+        .intro-text-cursos { 
+            color: var(--blue-light) !important;
+            margin-bottom: 40px; 
+        }
+        .course-detail-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+        }
+        .course-detail-grid > div:last-child {
+            padding-left: 0; 
+        }
+
+
+        /* --- SERVIÇOS (AGORA É A SEÇÃO BRANCA COM OS SERVIÇOS) --- */
+        #servicos { 
+            background-color: var(--light-color); 
+            color: #333; 
+            padding: 60px 20px;
+            width: 100%; 
+        }
+        #servicos h2 { 
+            color: var(--dark-color); 
+        }
         .service-cards-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -182,20 +261,147 @@
             color: var(--primary-color); 
             font-size: 1.6em;
         }
-        #cursos {
-            background-color: var(--dark-color); 
-            color: var(--light-color); 
+
+
+        /* --- CTAs RÁPIDOS (TOP & MEIO) --- */
+        .cta-section {
+            background-color: var(--light-color);
+            padding: 40px 20px;
+            text-align: center;
+            width: 100%; 
         }
-        .course-modules li {
-            background: var(--secondary-color); 
+        .cta-box {
+            background-color: var(--dark-color);
+            padding: 40px;
+            border-radius: 15px;
+            border: 3px solid var(--primary-color);
+            max-width: 600px;
+            margin: 0 auto;
+            box-shadow: 0 0 20px rgba(255, 193, 7, 0.4);
+            text-align: center;
             color: var(--light-color);
-            border-left: 6px solid var(--primary-color);
         }
-        .intro-text-cursos { 
-            color: var(--blue-light) !important;
+        .cta-title {
+            color: var(--light-color); 
+            font-size: 1.8em;
+            margin-bottom: 25px; 
+            text-align: center; 
+        }
+        
+        /* ESTILOS DE BOTÕES DE VENDA */
+        .price-tag-sale {
+            background-color: var(--primary-color); 
+            width: 100%; 
+            padding: 20px 0; 
+            border-radius: 10px;
+            margin-bottom: 20px; 
+            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+            text-align: center; 
+            display: block; /* Garante que ocupe a largura total e possa ser centralizado */
+            margin: 0 auto 20px auto; /* Centraliza o bloco de preço */
+        }
+        .price-tag-sale strong {
+            color: var(--dark-color) !important;
+            font-size: 3em; 
+            line-height: 1;
+        }
+        .price-tag-sale .lote-text {
+            color: var(--dark-color); 
+            font-weight: 700;
+            font-size: 0.9em;
+            margin-top: 5px;
+        }
+        .btn-buy-now-cta {
+            background-color: var(--urgent-color); 
+            color: var(--light-color);
+            padding: 18px 45px; 
+            border-radius: 50px;
+            font-size: 1.4em;
+            font-weight: 900;
+            text-decoration: none;
+            display: inline-block; /* Mantém como inline-block para ajuste de largura */
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+            width: auto; 
+            max-width: 100%; 
+        }
+        .btn-buy-now-cta:hover {
+            transform: translateY(-3px);
+        }
+
+        /* --- PROMOÇÃO FINAL (ÚLTIMO CTA) --- */
+        #promo-final {
+            background: linear-gradient(180deg, var(--dark-color) 0%, var(--secondary-color) 100%); 
+            padding: 80px 20px; 
+            border-top: 15px solid var(--primary-color); 
+            text-align: center;
+            color: var(--light-color); 
+            width: 100%;
+        }
+        .promo-box {
+            background-color: var(--dark-color); 
+            padding: 50px;
+            border-radius: 15px;
+            border: 5px solid var(--primary-color); 
+        }
+        .btn-group-link {
+            background-color: #25D366; 
+            color: var(--light-color);
+            padding: 15px 40px; 
+            font-size: 1.4em;
+            text-decoration: none;
+            border-radius: 10px;
+            display: inline-block; 
+            margin-bottom: 30px; 
+            font-weight: 700;
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); 
+            transition: transform 0.3s ease;
+        }
+        .btn-group-link:hover {
+            transform: translateY(-3px);
+        }
+        .price-group-block {
+            padding: 30px 0;
+            margin-top: 40px; 
+            background-color: var(--button-dark); 
+            border-radius: 15px;
+            border: 2px solid var(--primary-color);
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            gap: 20px; 
+            max-width: 400px; 
+            margin: 40px auto; 
+        }
+        .price-group-block .price-tag-sale { /* Estilo específico para o CTA final */
+            margin-bottom: 0; /* Remove a margem extra */
+        }
+        .btn-buy-now {
+            background-color: var(--urgent-color); 
+            color: var(--light-color);
+            padding: 20px 50px; 
+            font-size: 1.6em;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 900;
+            display: inline-block;
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+            transition: transform 0.3s ease;
+        }
+        .btn-buy-now:hover {
+            transform: translateY(-3px);
         }
 
         /* --- PORTFÓLIO (COLUNA) --- */
+        #portfolio {
+            background-color: var(--dark-color);
+            padding: 60px 20px;
+            color: var(--light-color);
+            width: 100%;
+        }
+        #portfolio .section-title {
+            color: var(--light-color); 
+        }
         .portfolio-grid {
             display: flex;
             flex-direction: column; 
@@ -222,117 +428,21 @@
         }
 
 
-        /* --- PROMOÇÃO FINAL (MÓDULO DE COMPRA APERFEIÇOADO) --- */
-        #promo-final {
-            background: linear-gradient(180deg, var(--dark-color) 0%, var(--secondary-color) 100%); 
-            padding: 80px 20px; 
-            border-top: 15px solid var(--primary-color); 
-            text-align: center;
-        }
-        .promo-box {
-            background-color: var(--dark-color); 
-            padding: 50px;
-            border-radius: 15px;
-            border: 5px solid var(--primary-color); 
-            box-shadow: 0 0 30px rgba(255, 193, 7, 0.7); 
-            max-width: 700px;
-            margin: 0 auto;
-        }
-        .promo-title {
-            color: var(--light-color); 
-            font-size: 2.2em;
-            margin-bottom: 5px;
-        }
-        .promo-subtitle {
-            color: var(--light-color); 
-            font-size: 1.4em;
-            margin-bottom: 25px;
-        }
-        
-        /* ESTILO PARA O BOTÃO DO GRUPO (AMARELO COM PRETO) */
-        .btn-group-link {
-            background-color: var(--primary-color); 
-            color: var(--dark-color); 
-            padding: 18px 45px; 
-            border-radius: 50px;
-            font-size: 1.5em;
-            font-weight: 900;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(255, 193, 7, 0.6);
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .btn-group-link:hover {
-            background-color: #cc9900;
-            transform: translateY(-3px);
-        }
-
-        /* ESTILO PARA O BLOCO DE PREÇO E VENDA */
-        .price-group-block {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 30px 0;
-            margin-top: 40px; 
-            background-color: var(--button-dark); 
-            border-radius: 15px;
-            border: 2px solid var(--primary-color);
-        }
-        .price-tag-sale {
-            background-color: var(--primary-color); 
-            display: inline-block;
-            padding: 15px 40px; 
-            border-radius: 10px;
-            margin-bottom: 20px; 
-            box-shadow: 0 5px 10px rgba(0,0,0,0.3);
-        }
-        .price-tag-sale strong {
-            color: var(--dark-color) !important;
-            font-size: 4em; 
-            line-height: 1;
-        }
-        .lote-text {
-            color: var(--dark-color);
-            font-weight: 700;
-            font-size: 1em;
-            margin-top: 5px;
-        }
-        
-        /* ESTILO PARA O BOTÃO COMPRE JÁ (AGORA VERMELHO COM BRANCO) */
-        .btn-buy-now {
-            background-color: var(--urgent-color); /* VERMELHO */
-            color: var(--light-color); /* BRANCO */
-            padding: 20px 50px; 
-            border-radius: 50px;
-            font-size: 1.6em;
-            font-weight: 900;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 15px;
-            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4); /* Sombra vermelha */
-            border: 2px solid var(--urgent-color); /* Borda vermelha */
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .btn-buy-now:hover {
-            background-color: #cc0000; /* Vermelho mais escuro no hover */
-            transform: translateY(-4px);
-        }
-
-        .whatsapp-contact {
-            color: var(--blue-light);
-            margin-top: 20px;
-        }
-        
         /* --- RODAPÉ --- */
         footer {
             background: var(--secondary-color); 
             color: var(--light-color);
             padding: 40px 0;
             text-align: center;
+            width: 100%;
         }
-        footer .contact-info a {
-            color: var(--blue-light);
+        .webdesigner-signature {
+            background-color: var(--dark-color);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8em;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
         }
 
         /* ==================================== */
@@ -340,12 +450,19 @@
         /* ==================================== */
         @media (max-width: 768px) {
             
-            /* FORÇA O LAYOUT DE COLUNA */
+            /* LAYOUTS */
             .service-cards-grid, .course-detail-grid {
                 grid-template-columns: 1fr;
                 display: flex;
                 flex-direction: column;
                 gap: 20px;
+            }
+            .portfolio-grid { 
+                gap: 15px;
+            }
+            .course-detail-grid > div:last-child {
+                padding-left: 0;
+                margin-top: 20px; 
             }
 
             /* AUMENTO AGRESSIVO E FIXO DA FONTE (SOLUÇÃO CONTRA SCALA) */
@@ -362,16 +479,12 @@
             .service-card h3 {
                 font-size: 20px !important; 
             }
-            .btn-group-link {
-                font-size: 1.4em !important;
+            .btn-buy-now-cta, .btn-group-link { 
+                font-size: 1.2em !important;
                 padding: 15px 30px !important;
             }
             .price-tag-sale strong {
-                font-size: 3.5em !important; 
-            }
-            .btn-buy-now {
-                font-size: 1.2em !important;
-                padding: 15px 30px !important;
+                font-size: 3em !important; 
             }
             .navbar .logo img { 
                 height: 40px; 
@@ -407,8 +520,8 @@
 
             <ul class="nav-links">
                 <li><a href="#sobre-nos">Sobre Nós</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#cursos">Cursos</a></li> 
+                <li><a href="#servicos">Serviços</a></li> 
                 <li><a href="#portfolio">Portfólio</a></li>
                 <li><a href="#promo-final" class="btn-contato">Contato</a></li>
             </ul>
@@ -423,7 +536,26 @@
             <p class="subtitle">Desbloqueie o potencial da sua equipe: gestão, treinamento e consultoria especializada.</p>
         </div>
     </header>
-
+    
+    <section id="call-to-action-1" class="cta-section">
+        <div class="cta-box">
+            <h3 class="cta-title" style="color: var(--primary-color);">QUERO MULTIPLICAR MINHAS VENDAS AGORA!</h3>
+            
+            <div class="price-tag-sale">
+                <strong style="font-size: 3em; color: var(--dark-color);">R$ 99<span class="cents">,90</span></strong>
+                <p class="lote-text" style="color: var(--dark-color);">Preço Exclusivo Primeiro Lote</p>
+            </div>
+            
+            <a 
+                href="https://wa.me/556692499755?text=Ol%C3%A1%2C%20gostaria%20de%20comprar%20o%20Curso%20Black%20Friday%20Milion%C3%A1ria%20no%20primeiro%20lote%20de%20R%24%2099%2C90." 
+                target="_blank" 
+                class="btn-buy-now-cta"
+            >
+                COMPRE JÁ
+            </a>
+        </div>
+    </section>
+    
     <section id="sobre-nos" class="container">
         <h2 class="section-title">📜 Sobre Nós</h2>
         <div class="content-text">
@@ -435,8 +567,63 @@
         </div>
     </section>
 
-    <section id="servicos" class="container">
-        <h2 class="section-title">🎯 Nossos Serviços de Elite</h2>
+    <section id="cursos" class="container"> 
+        <h2 class="section-title" style="color: var(--primary-color);">💰 CURSO EXCLUSIVO: BLACK FRIDAY MILIONÁRIA</h2>
+        <p class="intro-text intro-text-cursos">Transforme sua Black Friday na data mais lucrativa do ano com 7 Módulos Essenciais.</p>
+        
+        <div class="course-detail-grid">
+            
+            <div style="flex: 1;">
+                <h3 style="color: var(--primary-color); margin-bottom: 10px;">Módulos:</h3>
+                <ul class="course-modules">
+                    <li><span>Gatilho Secreto que Multiplica Resultados</span></li>
+                    <li><span>Engenharia de Produtos que Vende Estoque Parado</span></li>
+                    <li><span>Oferta Irresistível e Posicionamento de Loja</span></li>
+                    <li><span>Upcell e Crocell Inteligente</span></li>
+                    <li><span>Campanha de 8 Dias Black Friday Milionária</span></li>
+                    <li><span>Atendimento de Alta Performance</span></li>
+                    <li><span>Retenção, Follow Up e Rentabilização Pós-Venda</span></li>
+                </ul>
+            </div>
+            
+            <div style="flex: 1; padding-left: 20px;">
+                <h3 style="color: var(--primary-color); margin-bottom: 10px;">Outros Cursos Disponíveis:</h3>
+                <ul class="course-modules" style="list-style: none; padding: 0;">
+                    <li><span>Curso de Vendas e Atendimento</span></li>
+                    <li><span>Curso de Liderança</span></li>
+                    <li><span>Curso de Pós e Retenção</span></li>
+                    <li><span>Curso de Follow Up e Retenção</span></li>
+                    <li><span>Curso de Rentabilização e Pós-Venda</span></li>
+                    <li><span>Curso de Turnover</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="call-to-action-2" class="cta-section" style="background-color: var(--dark-color);">
+        <div class="cta-box" style="border: 3px solid var(--secondary-color); background-color: var(--dark-color);">
+            <h3 class="cta-title" style="color: var(--light-color);">PRONTO PARA MULTIPLICAR SEUS RESULTADOS?</h3>
+            
+            <div class="price-tag-sale">
+                <strong style="font-size: 3em; color: var(--dark-color);">R$ 99<span class="cents">,90</span></strong>
+                <p class="lote-text" style="color: var(--dark-color);">Aproveite o Primeiro Lote!</p>
+            </div>
+            
+            <a 
+                href="https://wa.me/556692499755?text=Ol%C3%A1%2C%20gostaria%20de%20comprar%20o%20Curso%20Black%20Friday%20Milion%C3%A1ria%20no%20primeiro%20lote%20de%20R%24%2099%2C90." 
+                target="_blank" 
+                class="btn-buy-now-cta"
+            >
+                COMPRE JÁ
+            </a>
+        </div>
+    </section>
+    
+    <section id="servicos" class="container"> 
+        <div class="section-icons">
+            <i class="fas fa-star"></i> 🎯
+        </div>
+        <h2 class="section-title">Nossos Serviços de Elite</h2>
         <p class="intro-text">Explore nossas soluções feitas sob medida, desenhadas com foco em performance e transformação.</p>
         
         <div class="service-cards-grid">
@@ -473,67 +660,6 @@
         </div>
     </section>
     
-    <section id="cursos" class="container">
-        <h2 class="section-title" style="color: var(--primary-color);">💰 CURSO EXCLUSIVO: BLACK FRIDAY MILIONÁRIA</h2>
-        <p class="intro-text intro-text-cursos">Transforme sua Black Friday na data mais lucrativa do ano com 7 Módulos Essenciais.</p>
-        
-        <div class="course-detail-grid">
-            
-            <div style="flex: 1;">
-                <h3 style="color: var(--primary-color); margin-bottom: 10px;">Módulos:</h3>
-                <ul class="course-modules">
-                    <li>Gatilho Secreto que Multiplica Resultados</li>
-                    <li>Engenharia de Produtos que Vende Estoque Parado</li>
-                    <li>Oferta Irresistível e Posicionamento de Loja</li>
-                    <li>Upcell e Crocell Inteligente</li>
-                    <li>Campanha de 8 Dias Black Friday Milionária</li>
-                    <li>Atendimento de Alta Performance</li>
-                    <li>Retenção, Follow Up e Rentabilização Pós-Venda</li>
-                </ul>
-            </div>
-            
-            <div style="flex: 1; padding-left: 20px;">
-                <h3 style="color: var(--primary-color); margin-bottom: 10px;">Outros Cursos Disponíveis:</h3>
-                <ul style="list-style: none; padding: 0;">
-                    <li>Curso de Vendas e Atendimento</li>
-                    <li>Curso de Liderança</li>
-                    <li>Curso de Pós e Retenção</li>
-                    <li>Curso de Follow Up e Retenção</li>
-                    <li>Curso de Rentabilização e Pós-Venda</li>
-                    <li>Curso de Turnover</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section id="portfolio" class="container">
-        <h2 class="section-title">⭐ Nosso Legado: Imagens em Destaque</h2>
-        <p class="intro-text">Confira o visual de nossa empresa, parceiros, clientes e criações.</p>
-        
-        <div class="portfolio-grid">
-            
-            <div class="portfolio-category">
-                <img src="https://i.ibb.co/pjyb7KHn/Imagem-do-Whats-App-de-2025-11-02-s-14-25-09-d9e24b88.jpg" alt="Nossa História" class="logo-grid-image">
-            </div>
-            
-            <div class="portfolio-category">
-                <img src="https://i.ibb.co/VYtH7FvL/Imagem-do-Whats-App-de-2025-11-02-s-14-25-09-d0465dc6.jpg" alt="Logomarcas Criadas" class="logo-grid-image">
-            </div>
-            
-            <div class="portfolio-category">
-                <img src="https://i.ibb.co/Lh1Tf97B/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-a056e00c.jpg" alt="Logomarcas de Parceiros" class="logo-grid-image">
-            </div>
-            
-            <div class="portfolio-category">
-                <img src="https://i.ibb.co/fGHBJT4N/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-f863ceb3.jpg" alt="Ícones de Serviços" class="logo-grid-image">
-            </div>
-            
-            <div class="portfolio-category">
-                <img src="https://i.ibb.co/fd4smrSr/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-673d4522.jpg" alt="A Chave" class="logo-grid-image">
-            </div>
-            
-        </div>
-    </section>
 
     <section id="promo-final">
         <div class="promo-box container">
@@ -553,7 +679,7 @@
                 
                 <div class="price-tag-sale">
                     <strong style="font-size: 4.5em; color: var(--dark-color);">R$ 99<span class="cents">,90</span></strong>
-                    <p class="lote-text">Preço Exclusivo Primeiro Lote</p>
+                    <p class="lote-text" style="color: var(--dark-color);">Preço Exclusivo Primeiro Lote</p>
                 </div>
                 
                 <a 
@@ -568,51 +694,47 @@
             <p class="whatsapp-contact">Dúvidas? Fale com Almeida Junior no WhatsApp: 66 9249-9755</p>
         </div>
     </section>
-    
-    <footer>
-        <div class="container footer-content">
-            <div class="contact-info">
-                <h2 class="section-title">Fale Conosco</h2>
-                <p><strong>Telefone da Empresa:</strong> <span style="color: var(--blue-light);">(66) 9 9249 9755</span></p>
-                <p><strong>Instagram DABLIOA:</strong> <a href="https://www.instagram.com/dablioamktdigital" target="_blank" style="color: var(--blue-light); text-decoration: none;">@dablioamktdigital</a></p>
-                <p><strong>Meu Instagram:</strong> <a href="https://www.instagram.com/almeidajunior_wa" target="_blank" style="color: var(--blue-light); text-decoration: none;">@almeidajunior_wa</a></p>
-                <p style="color: var(--light-color);">Estamos prontos para ajudar o seu negócio a alcançar o próximo nível.</p>
+
+    <section id="portfolio">
+        <div class="container">
+            <h2 class="section-title">⭐ Nosso Legado: Imagens em Destaque</h2>
+            <p class="intro-text">Confira o visual de nossa empresa, parceiros, clientes e criações.</p>
+            
+            <div class="portfolio-grid">
+                
+                <div class="portfolio-category">
+                    <img src="https://i.ibb.co/pjyb7KHn/Imagem-do-Whats-App-de-2025-11-02-s-14-25-09-d9e24b88.jpg" alt="Nossa História" class="logo-grid-image">
+                </div>
+                
+                <div class="portfolio-category">
+                    <img src="https://i.ibb.co/VYtH7FvL/Imagem-do-Whats-App-de-2025-11-02-s-14-25-09-d0465dc6.jpg" alt="Logomarcas Criadas" class="logo-grid-image">
+                </div>
+                
+                <div class="portfolio-category">
+                    <img src="https://i.ibb.co/Lh1Tf97B/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-a056e00c.jpg" alt="Equipe e Clientes" class="logo-grid-image">
+                </div>
             </div>
-            <div class="copyright">
-                <p style="color: #aaa;">&copy; 2024 DABLIOA MKT. Todos os direitos reservados.</p>
+        </div>
+    </section>
+
+
+    <div class="webdesigner-signature">
+        <p>Desenvolvido por DABLIOA MKT. Todos os direitos reservados.</p>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DABLIOA MKT - CNPJ: 00.000.000/0001-00</p>
+            <div style="margin-top: 10px;">
+                <a href="https://wa.me/556692499755" target="_blank" style="color: var(--primary-color); margin: 0 10px;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                <a href="#" style="color: var(--primary-color); margin: 0 10px;"><i class="fab fa-instagram"></i> Instagram</a>
             </div>
         </div>
     </footer>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('.nav-links');
-
-            menuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('active');
-            });
-            
-            const links = document.querySelectorAll('.nav-links a');
-            links.forEach(function(link) {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault(); 
-                    const targetId = this.getAttribute('href'); 
-                    const targetSection = document.querySelector(targetId);
-
-                    if (targetSection) {
-                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
-                        window.scrollTo({
-                            top: targetSection.offsetTop - navbarHeight - 10,
-                            behavior: 'smooth'
-                        });
-                    }
-
-                    if (navLinks.classList.contains('active')) {
-                        navLinks.classList.remove('active');
-                    }
-                });
-            });
+        document.querySelector('.menu-toggle').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
         });
     </script>
 </body>
