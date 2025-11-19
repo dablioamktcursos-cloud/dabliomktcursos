@@ -157,7 +157,7 @@
         }
 
         /* --- SOBRE NÓS --- */
-        #sobre-nos { /* Fundo Branco */
+        #sobre-nos { 
             background-color: var(--light-color);
             padding: 60px 20px;
         }
@@ -289,13 +289,14 @@
             font-size: 0.9em;
             margin-top: 5px;
         }
-        /* CORREÇÃO: Wrapper para botões lado a lado */
+        /* CORREÇÃO CRÍTICA: Wrapper para botões lado a lado */
         .cta-buttons-wrapper {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 15px; 
             margin-top: 20px;
+            width: 100%; /* Garante que ocupe a largura total do CTA Box */
         }
         .btn-buy-now-cta, .btn-group-link-secondary {
             padding: 18px 30px; 
@@ -306,8 +307,8 @@
             display: inline-block;
             box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4); 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: auto; 
-            max-width: 50%; 
+            width: 50%; /* Faz os botões dividirem o espaço */
+            max-width: 250px; 
             text-align: center;
         }
         .btn-buy-now-cta { /* Vermelho */
@@ -319,7 +320,7 @@
             background-color: #25D366; 
             color: var(--light-color);
             border: 2px solid #25D366;
-            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.4); 
         }
         .btn-buy-now-cta:hover, .btn-group-link-secondary:hover {
              transform: translateY(-3px);
@@ -335,7 +336,7 @@
             color: var(--light-color); 
             width: 100%;
         }
-        .btn-group-link {
+        .btn-group-link { /* Botão de grupo no CTA final */
             background-color: #25D366; 
             color: var(--light-color);
             padding: 15px 40px; 
@@ -368,9 +369,6 @@
             color: var(--light-color);
             width: 100%;
         }
-        #portfolio .section-title {
-            color: var(--light-color); 
-        }
         .portfolio-grid {
             display: flex;
             flex-direction: column; 
@@ -378,32 +376,6 @@
             padding: 20px 0;
             max-width: 800px; 
             margin: 0 auto; 
-        }
-        .portfolio-category {
-            text-align: center;
-            background: var(--dark-color);
-            padding: 15px; 
-            border-radius: 8px;
-            border: 3px solid var(--primary-color);
-            margin: 0 auto; 
-            max-width: 100%;
-        }
-        .portfolio-category img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-            border: 2px solid var(--light-color);
-            display: block;
-        }
-
-
-        /* --- RODAPÉ --- */
-        footer {
-            background: var(--secondary-color); 
-            color: var(--light-color);
-            padding: 40px 0;
-            text-align: center;
-            width: 100%;
         }
 
         /* ==================================== */
@@ -422,14 +394,29 @@
                 padding-left: 0;
                 margin-top: 20px; 
             }
+            
+            /* FORÇA A EXIBIÇÃO DE BOTÕES UM ABAIXO DO OUTRO NO MOBILE */
+            .cta-buttons-wrapper {
+                flex-direction: column; 
+                gap: 10px;
+                width: 100%;
+            }
+            .btn-buy-now-cta, .btn-group-link-secondary {
+                width: 90%; /* Ocupa mais espaço no mobile */
+                max-width: 350px;
+                margin: 0 auto;
+            }
+            .price-tag-sale {
+                width: 90%;
+            }
 
-            /* AUMENTO AGRESSIVO E FIXO DA FONTE (SOLUÇÃO CONTRA SCALA) */
+            /* FONTES */
             p, li, blockquote, .intro-text, .whatsapp-contact {
                 font-size: 16px !important; 
                 line-height: 1.5 !important;
             }
             .hero-content h2 {
-                font-size: 32px !important; 
+                font-size: 30px !important; 
             }
             .section-title, h2.section-title {
                 font-size: 24px !important; 
@@ -437,17 +424,8 @@
             .service-card h3 {
                 font-size: 20px !important; 
             }
-            .btn-buy-now-cta, .btn-group-link-secondary { 
-                font-size: 1.2em !important;
-                padding: 15px 30px !important;
-                width: 85%; /* Garante que ocupe a maior parte da largura */
-                max-width: 300px;
-            }
             .price-tag-sale strong {
                 font-size: 3em !important; 
-            }
-            .navbar .logo img { 
-                height: 40px; 
             }
             
             /* MENU MOBILE */
@@ -521,7 +499,7 @@
             </div>
         </div>
     </section>
-
+    
     <section id="sobre-nos" class="container">
         <h2 class="section-title">📜 Sobre Nós</h2>
         <div class="content-text">
@@ -654,14 +632,14 @@
                     <a 
                         href="https://wa.me/556692499755?text=Ol%C3%A1%2C%20gostaria%20de%20comprar%20o%20Curso%20Black%20Friday%20Milion%C3%A1ria%20no%20primeiro%20lote%20de%20R%24%2099%2C90." 
                         target="_blank" 
-                        class="btn-buy-now"
+                        class="btn-buy-now-cta"
                     >
                         COMPRE JÁ
                     </a>
                     <a 
                         href="https://chat.whatsapp.com/Bp6hJ6OkhCuK8Kt0LAkYvm?mode=wwt" 
                         target="_blank" 
-                        class="btn-group-link"
+                        class="btn-group-link-secondary"
                     >
                         ENTRE NO GRUPO JÁ!
                     </a>
