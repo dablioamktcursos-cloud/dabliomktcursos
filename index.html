@@ -69,19 +69,6 @@
             margin: 10px auto 0;
             border-radius: 2px;
         }
-        
-        /* Estilo para o contêiner dos ícones */
-        .section-icons {
-            text-align: center;
-            margin-bottom: 20px; /* Espaçamento entre os ícones e o título */
-            font-size: 2.5em; /* Tamanho dos ícones */
-            color: var(--primary-color);
-        }
-        .section-icons .icon-separator {
-            color: #ccc; /* Cor do separador, se houver */
-            margin: 0 10px;
-        }
-
 
         .intro-text {
             text-align: center;
@@ -151,11 +138,6 @@
             width: 100%; 
             overflow: hidden; 
         }
-        .hero-content {
-            max-width: 100%; 
-            margin: 0 auto; 
-            padding: 0 0; 
-        }
         .cover-image { 
             width: 100%; 
             height: auto;
@@ -177,6 +159,10 @@
         }
 
         /* --- SOBRE NÓS --- */
+        #sobre-nos { /* Fundo Branco */
+            background-color: var(--light-color);
+            padding: 60px 20px;
+        }
         .assinatura {
             border-left: 8px solid var(--primary-color);
             padding-left: 20px;
@@ -216,9 +202,6 @@
             font-size: 1em;
             text-align: left;
             transition: transform 0.2s ease;
-        }
-        .course-modules li:hover {
-            transform: translateX(5px);
         }
         .intro-text-cursos { 
             color: var(--blue-light) !important;
@@ -297,8 +280,8 @@
             margin-bottom: 20px; 
             box-shadow: 0 5px 10px rgba(0,0,0,0.3);
             text-align: center; 
-            display: block; /* Garante que ocupe a largura total e possa ser centralizado */
-            margin: 0 auto 20px auto; /* Centraliza o bloco de preço */
+            display: block; 
+            margin: 0 auto 20px auto; 
         }
         .price-tag-sale strong {
             color: var(--dark-color) !important;
@@ -306,7 +289,7 @@
             line-height: 1;
         }
         .price-tag-sale .lote-text {
-            color: var(--dark-color); 
+            color: var(--dark-color); /* CORREÇÃO: Texto do lote em preto */
             font-weight: 700;
             font-size: 0.9em;
             margin-top: 5px;
@@ -319,7 +302,7 @@
             font-size: 1.4em;
             font-weight: 900;
             text-decoration: none;
-            display: inline-block; /* Mantém como inline-block para ajuste de largura */
+            display: inline-block; 
             box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
             transition: transform 0.3s ease;
             width: auto; 
@@ -357,9 +340,6 @@
             box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4); 
             transition: transform 0.3s ease;
         }
-        .btn-group-link:hover {
-            transform: translateY(-3px);
-        }
         .price-group-block {
             padding: 30px 0;
             margin-top: 40px; 
@@ -373,9 +353,6 @@
             max-width: 400px; 
             margin: 40px auto; 
         }
-        .price-group-block .price-tag-sale { /* Estilo específico para o CTA final */
-            margin-bottom: 0; /* Remove a margem extra */
-        }
         .btn-buy-now {
             background-color: var(--urgent-color); 
             color: var(--light-color);
@@ -387,9 +364,6 @@
             display: inline-block;
             box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
             transition: transform 0.3s ease;
-        }
-        .btn-buy-now:hover {
-            transform: translateY(-3px);
         }
 
         /* --- PORTFÓLIO (COLUNA) --- */
@@ -457,9 +431,6 @@
                 flex-direction: column;
                 gap: 20px;
             }
-            .portfolio-grid { 
-                gap: 15px;
-            }
             .course-detail-grid > div:last-child {
                 padding-left: 0;
                 margin-top: 20px; 
@@ -514,7 +485,7 @@
     <nav class="navbar">
         <div class="container">
             <div class="logo">
-                <img src="https://i.ibb.co/677SvBTq/Chat-GPT-Image-3-de-nov-de-2025-19-47-04.png" alt="Logo Dablioa MKT">
+                <img src="https://i.ibb.co/wN3h7bzS/Chat-GPT-Image-3-de-nov-de-2025-19-47-04.png" alt="Logo Dablioa MKT">
             </div>
             <button class="menu-toggle" aria-label="Abrir Menu">☰</button>
 
@@ -600,6 +571,7 @@
         </div>
     </section>
 
+    
     <section id="call-to-action-2" class="cta-section" style="background-color: var(--dark-color);">
         <div class="cta-box" style="border: 3px solid var(--secondary-color); background-color: var(--dark-color);">
             <h3 class="cta-title" style="color: var(--light-color);">PRONTO PARA MULTIPLICAR SEUS RESULTADOS?</h3>
@@ -711,30 +683,70 @@
                 </div>
                 
                 <div class="portfolio-category">
-                    <img src="https://i.ibb.co/Lh1Tf97B/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-a056e00c.jpg" alt="Equipe e Clientes" class="logo-grid-image">
+                    <img src="https://i.ibb.co/Lh1Tf97B/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-a056e00c.jpg" alt="Logomarcas de Parceiros" class="logo-grid-image">
                 </div>
+                
+                <div class="portfolio-category">
+                    <img src="https://i.ibb.co/fGHBJT4N/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-f863ceb3.jpg" alt="Ícones de Serviços" class="logo-grid-image">
+                </div>
+                
+                <div class="portfolio-category">
+                    <img src="https://i.ibb.co/fd4smrSr/Imagem-do-Whats-App-de-2025-11-02-s-14-25-10-673d4522.jpg" alt="A Chave" class="logo-grid-image">
+                </div>
+                
             </div>
         </div>
     </section>
 
-
-    <div class="webdesigner-signature">
-        <p>Desenvolvido por DABLIOA MKT. Todos os direitos reservados.</p>
-    </div>
-
+    
     <footer>
-        <div class="container">
-            <p>&copy; 2025 DABLIOA MKT - CNPJ: 00.000.000/0001-00</p>
-            <div style="margin-top: 10px;">
-                <a href="https://wa.me/556692499755" target="_blank" style="color: var(--primary-color); margin: 0 10px;"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-                <a href="#" style="color: var(--primary-color); margin: 0 10px;"><i class="fab fa-instagram"></i> Instagram</a>
+        <div class="container footer-content">
+            <div class="contact-info">
+                <h2 class="section-title">Fale Conosco</h2>
+                <p><strong>Telefone da Empresa:</strong> <span style="color: var(--blue-light);">(66) 9 9249 9755</span></p>
+                <p><strong>Instagram DABLIOA:</strong> <a href="https://www.instagram.com/dablioamktdigital" target="_blank" style="color: var(--blue-light); text-decoration: none;">@dablioamktdigital</a></p>
+                <p><strong>Meu Instagram:</strong> <a href="https://www.instagram.com/almeidajunior_wa" target="_blank" style="color: var(--blue-light); text-decoration: none;">@almeidajunior_wa</a></p>
+                <p style="color: var(--light-color);">Estamos prontos para ajudar o seu negócio a alcançar o próximo nível.</p>
+            </div>
+            <div class="copyright">
+                <p style="color: #aaa;">&copy; 2024 DABLIOA MKT. Todos os direitos reservados.</p>
             </div>
         </div>
     </footer>
 
+    <div class="webdesigner-signature">
+        Web Designer: Arthur
+    </div>
+
     <script>
-        document.querySelector('.menu-toggle').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            const links = document.querySelectorAll('.nav-links a');
+            links.forEach(function(link) {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); 
+                    const targetId = this.getAttribute('href'); 
+                    const targetSection = document.querySelector(targetId);
+
+                    if (targetSection) {
+                        const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                        window.scrollTo({
+                            top: targetSection.offsetTop - navbarHeight - 10,
+                            behavior: 'smooth'
+                        });
+                    }
+
+                    if (navLinks.classList.contains('active')) {
+                        navLinks.classList.remove('active');
+                    }
+                });
+            });
         });
     </script>
 </body>
