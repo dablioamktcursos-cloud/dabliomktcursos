@@ -157,7 +157,7 @@
         }
 
         /* --- SOBRE NÓS --- */
-        #sobre-nos { 
+        #sobre-nos { /* Fundo Branco */
             background-color: var(--light-color);
             padding: 60px 20px;
         }
@@ -296,7 +296,7 @@
             align-items: center;
             gap: 15px; 
             margin-top: 20px;
-            width: 100%; /* Garante que ocupe a largura total do CTA Box */
+            width: 100%; 
         }
         .btn-buy-now-cta, .btn-group-link-secondary {
             padding: 18px 30px; 
@@ -307,7 +307,7 @@
             display: inline-block;
             box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4); 
             transition: transform 0.3s ease, box-shadow 0.3s ease;
-            width: 50%; /* Faz os botões dividirem o espaço */
+            width: 50%; 
             max-width: 250px; 
             text-align: center;
         }
@@ -327,6 +327,7 @@
              box-shadow: 0 12px 25px rgba(0,0,0,0.5);
         }
 
+
         /* --- PROMOÇÃO FINAL (ÚLTIMO CTA) --- */
         #promo-final {
             background: linear-gradient(180deg, var(--dark-color) 0%, var(--secondary-color) 100%); 
@@ -336,7 +337,7 @@
             color: var(--light-color); 
             width: 100%;
         }
-        .btn-group-link { /* Botão de grupo no CTA final */
+        .btn-group-link {
             background-color: #25D366; 
             color: var(--light-color);
             padding: 15px 40px; 
@@ -369,6 +370,9 @@
             color: var(--light-color);
             width: 100%;
         }
+        #portfolio .section-title {
+            color: var(--light-color); 
+        }
         .portfolio-grid {
             display: flex;
             flex-direction: column; 
@@ -376,6 +380,40 @@
             padding: 20px 0;
             max-width: 800px; 
             margin: 0 auto; 
+        }
+        .portfolio-category {
+            text-align: center;
+            background: var(--dark-color);
+            padding: 15px; 
+            border-radius: 8px;
+            border: 3px solid var(--primary-color);
+            margin: 0 auto; 
+            max-width: 100%;
+        }
+        .portfolio-category img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            border: 2px solid var(--light-color);
+            display: block;
+        }
+
+
+        /* --- RODAPÉ --- */
+        footer {
+            background: var(--secondary-color); 
+            color: var(--light-color);
+            padding: 40px 0;
+            text-align: center;
+            width: 100%;
+        }
+        .webdesigner-signature {
+            background-color: var(--dark-color);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.8em;
+            padding: 10px 0;
+            text-align: center;
+            width: 100%;
         }
 
         /* ==================================== */
@@ -402,21 +440,18 @@
                 width: 100%;
             }
             .btn-buy-now-cta, .btn-group-link-secondary {
-                width: 90%; /* Ocupa mais espaço no mobile */
+                width: 90%; /* Ocupa a maior parte da largura */
                 max-width: 350px;
                 margin: 0 auto;
             }
-            .price-tag-sale {
-                width: 90%;
-            }
 
-            /* FONTES */
+            /* AUMENTO AGRESSIVO E FIXO DA FONTE (SOLUÇÃO CONTRA SCALA) */
             p, li, blockquote, .intro-text, .whatsapp-contact {
                 font-size: 16px !important; 
                 line-height: 1.5 !important;
             }
             .hero-content h2 {
-                font-size: 30px !important; 
+                font-size: 32px !important; 
             }
             .section-title, h2.section-title {
                 font-size: 24px !important; 
@@ -426,6 +461,9 @@
             }
             .price-tag-sale strong {
                 font-size: 3em !important; 
+            }
+            .navbar .logo img { 
+                height: 40px; 
             }
             
             /* MENU MOBILE */
@@ -440,6 +478,9 @@
                 position: absolute;
                 top: 52px;
                 left: 0;
+            }
+            .nav-links.active {
+                display: flex;
             }
         }
     </style>
